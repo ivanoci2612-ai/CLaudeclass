@@ -1,4 +1,4 @@
-import { useCurrentFrame, useVideoConfig, interpolate, spring } from "remotion";
+import { useCurrentFrame, useVideoConfig, interpolate, spring, Audio, staticFile } from "remotion";
 
 export const Scene1Title: React.FC = () => {
   const frame = useCurrentFrame();
@@ -14,6 +14,8 @@ export const Scene1Title: React.FC = () => {
   const gradientShift = interpolate(frame, [0, 119], [0, 30]);
 
   return (
+    <>
+    <Audio src={staticFile("audio/scene1.wav")} volume={0.9} />
     <div style={{
       width: "100%", height: "100%",
       background: `linear-gradient(${135 + gradientShift}deg, #0a0a2e 0%, #1a1a5e 30%, #0d3b6e 60%, #051020 100%)`,
@@ -73,5 +75,6 @@ export const Scene1Title: React.FC = () => {
         A journey for the bold
       </p>
     </div>
+    </>
   );
 };

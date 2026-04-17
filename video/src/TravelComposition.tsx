@@ -1,4 +1,4 @@
-import { Sequence, useCurrentFrame, interpolate } from "remotion";
+import { Sequence, useCurrentFrame, interpolate, Audio, staticFile } from "remotion";
 import { Scene1Title } from "./scenes/Scene1Title";
 import { Scene2Quote } from "./scenes/Scene2Quote";
 import { Scene3Stats } from "./scenes/Scene3Stats";
@@ -21,6 +21,8 @@ export const TravelComposition: React.FC = () => {
 
   return (
     <div style={{ width: "100%", height: "100%", opacity: crossFadeOpacity }}>
+      {/* Background music, full 20 seconds, lower volume under voice */}
+      <Audio src={staticFile("audio/music.wav")} volume={0.25} />
       <Sequence from={0} durationInFrames={SCENE_DURATION}>
         <Scene1Title />
       </Sequence>

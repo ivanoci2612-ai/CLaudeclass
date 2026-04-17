@@ -1,4 +1,4 @@
-import { useCurrentFrame, interpolate, spring, useVideoConfig } from "remotion";
+import { useCurrentFrame, interpolate, spring, useVideoConfig, Audio, staticFile } from "remotion";
 
 export const Scene5CTA: React.FC = () => {
   const frame = useCurrentFrame();
@@ -21,6 +21,8 @@ export const Scene5CTA: React.FC = () => {
   const hue = interpolate(frame, [0, 119], [200, 280]);
 
   return (
+    <>
+    <Audio src={staticFile("audio/scene5.wav")} volume={0.9} />
     <div style={{
       width: "100%", height: "100%",
       background: `radial-gradient(ellipse at center, hsl(${hue}, 80%, 20%) 0%, #050510 70%)`,
@@ -86,5 +88,6 @@ export const Scene5CTA: React.FC = () => {
         The adventure of a lifetime starts today 🌍
       </p>
     </div>
+    </>
   );
 };

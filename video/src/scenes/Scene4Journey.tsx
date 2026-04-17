@@ -1,4 +1,4 @@
-import { useCurrentFrame, interpolate, spring, useVideoConfig } from "remotion";
+import { useCurrentFrame, interpolate, spring, useVideoConfig, Audio, staticFile } from "remotion";
 
 export const Scene4Journey: React.FC = () => {
   const frame = useCurrentFrame();
@@ -23,6 +23,8 @@ export const Scene4Journey: React.FC = () => {
   const locations = ["🗼 Paris", "🏔️ Nepal", "🏝️ Bali", "🏜️ Sahara", "🗽 New York"];
 
   return (
+    <>
+    <Audio src={staticFile("audio/scene4.wav")} volume={0.9} />
     <div style={{
       width: "100%", height: "100%",
       background: "linear-gradient(180deg, #0c1445 0%, #1a2f6e 40%, #2d4a8a 100%)",
@@ -109,5 +111,6 @@ export const Scene4Journey: React.FC = () => {
         ))}
       </div>
     </div>
+    </>
   );
 };

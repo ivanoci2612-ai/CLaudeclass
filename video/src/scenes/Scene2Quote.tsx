@@ -1,4 +1,4 @@
-import { useCurrentFrame, interpolate, spring, useVideoConfig } from "remotion";
+import { useCurrentFrame, interpolate, spring, useVideoConfig, Audio, staticFile } from "remotion";
 
 export const Scene2Quote: React.FC = () => {
   const frame = useCurrentFrame();
@@ -16,6 +16,8 @@ export const Scene2Quote: React.FC = () => {
   const dotProgress = interpolate(frame, [0, 119], [0, 1]);
 
   return (
+    <>
+    <Audio src={staticFile("audio/scene2.wav")} volume={0.9} />
     <div style={{
       width: "100%", height: "100%",
       background: "linear-gradient(160deg, #0f2027 0%, #203a43 50%, #2c5364 100%)",
@@ -69,5 +71,6 @@ export const Scene2Quote: React.FC = () => {
         <div style={{ width: 60, height: 2, background: "#7dd3fc" }} />
       </div>
     </div>
+    </>
   );
 };

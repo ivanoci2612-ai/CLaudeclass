@@ -1,4 +1,4 @@
-import { useCurrentFrame, interpolate, spring, useVideoConfig } from "remotion";
+import { useCurrentFrame, interpolate, spring, useVideoConfig, Audio, staticFile } from "remotion";
 
 const Stat: React.FC<{ emoji: string; value: string; label: string; delay: number }> = ({ emoji, value, label, delay }) => {
   const frame = useCurrentFrame();
@@ -31,6 +31,8 @@ export const Scene3Stats: React.FC = () => {
   const titleY = interpolate(frame, [0, 30], [40, 0], { extrapolateRight: "clamp" });
 
   return (
+    <>
+    <Audio src={staticFile("audio/scene3.wav")} volume={0.9} />
     <div style={{
       width: "100%", height: "100%",
       background: "linear-gradient(135deg, #1a0533 0%, #2d1b69 40%, #1e1b4b 100%)",
@@ -70,5 +72,6 @@ export const Scene3Stats: React.FC = () => {
         The world is calling — and the young are answering.
       </p>
     </div>
+    </>
   );
 };
