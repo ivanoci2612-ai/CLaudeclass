@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BetZone — Sports Betting</title>
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#00e676" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="BetZone" />
+  <link rel="apple-touch-icon" href="icon.svg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-logo">
+      <span class="logo-icon">⚽</span>
+      <span class="logo-text">Bet<span class="accent">Zone</span></span>
+    </div>
+    <nav class="header-sports">
+      <button class="sport-tab active" data-sport="football">Football</button>
+      <button class="sport-tab" data-sport="basketball">Basketball</button>
+      <button class="sport-tab" data-sport="tennis">Tennis</button>
+      <button class="sport-tab" data-sport="cricket">Cricket</button>
+    </nav>
+    <div class="header-account">
+      <span class="balance-label">Balance</span>
+      <span class="balance-value" id="balance">$1,000.00</span>
+    </div>
+  </header>
+
+  <!-- LIVE TICKER -->
+  <div class="ticker-bar">
+    <span class="ticker-label">LIVE</span>
+    <div class="ticker-track" id="ticker-track"></div>
+  </div>
+
+  <!-- MAIN LAYOUT -->
+  <div class="layout">
+
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <h3 class="sidebar-title">Filter</h3>
+        <button class="filter-btn active" data-filter="all">All Matches</button>
+        <button class="filter-btn" data-filter="live">Live Now</button>
+        <button class="filter-btn" data-filter="upcoming">Upcoming</button>
+      </div>
+      <div class="sidebar-section">
+        <h3 class="sidebar-title">Leagues</h3>
+        <ul class="league-list" id="league-list"></ul>
+      </div>
+    </aside>
+
+    <!-- MATCH CENTER -->
+    <main class="match-center">
+      <div class="section-header">
+        <h2 id="section-title">All Football Matches</h2>
+        <div class="odds-toggle">
+          <span class="toggle-label">Odds:</span>
+          <button class="toggle-btn active" data-format="decimal">Decimal</button>
+          <button class="toggle-btn" data-format="fractional">Fractional</button>
+        </div>
+      </div>
+      <div id="matches-container"></div>
+    </main>
+
+    <!-- BET SLIP -->
+    <aside class="bet-slip">
+      <div class="slip-header">
+        <h3>Bet Slip</h3>
+        <span class="slip-count" id="slip-count">0</span>
+      </div>
+      <div id="slip-items" class="slip-items">
+        <p class="slip-empty">Select odds to add bets</p>
+      </div>
+      <div class="slip-footer" id="slip-footer" style="display:none">
+        <div class="slip-total">
+          <span>Total Stake</span>
+          <span id="total-stake">$0.00</span>
+        </div>
+        <div class="slip-total">
+          <span>Potential Return</span>
+          <span id="total-return" class="accent">$0.00</span>
+        </div>
+        <button class="place-bet-btn" id="place-bet-btn">Place Bet</button>
+        <button class="clear-btn" id="clear-btn">Clear All</button>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js');
+    }
+  </script>
+</body>
+</html>

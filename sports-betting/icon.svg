@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#0f1923"/>
+  <circle cx="256" cy="256" r="190" fill="none" stroke="#00e676" stroke-width="18"/>
+  <circle cx="256" cy="256" r="155" fill="none" stroke="#00e676" stroke-width="6" stroke-dasharray="30 14"/>
+  <text x="256" y="224" font-family="Arial Black, sans-serif" font-size="110" font-weight="900"
+        text-anchor="middle" fill="#00e676">BZ</text>
+  <text x="256" y="310" font-family="Arial, sans-serif" font-size="48" font-weight="700"
+        text-anchor="middle" fill="#7a8fa6" letter-spacing="6">SPORT</text>
+</svg>
