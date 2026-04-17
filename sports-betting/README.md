@@ -13,6 +13,8 @@
 
 ## Screenshots
 
+![BetZone App](betzone-live.png)
+
 | Match Center | Bet Slip |
 |---|---|
 | Live odds across 4 sports, filterable by league | Multi-selection slip with real-time payout preview |
