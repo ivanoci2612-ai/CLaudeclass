@@ -13,7 +13,7 @@
 
 ## Screenshots
 
-![BetZone App](betzone-live.png)
+![BetZone App](https://raw.githubusercontent.com/ivanoci2612-ai/CLaudeclass/main/sports-betting/betzone-live.png)
 
 | Match Center | Bet Slip |
 |---|---|
